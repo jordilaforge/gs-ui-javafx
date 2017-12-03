@@ -29,10 +29,10 @@
  * The fact that you are presently reading this means that you have had
  * knowledge of the CeCILL-C and LGPL licenses and that you accept their terms.
  */
-package org.graphstream.ui.fxViewer.basicRenderer;
+package org.graphstream.ui.fx_viewer.basicRenderer;
 
 import org.graphstream.graph.Element;
-import org.graphstream.ui.fxViewer.util.FxDefaultCamera;
+import org.graphstream.ui.fx_viewer.util.FxDefaultCamera;
 import org.graphstream.ui.geom.Point3;
 import org.graphstream.ui.graphicGraph.GraphicElement;
 import org.graphstream.ui.graphicGraph.GraphicSprite;
@@ -196,14 +196,14 @@ public abstract class FxElementRenderer {
 	protected void configureText(StyleGroup group, Camera camera) {
 		String fontName = group.getTextFont();
 		//StyleConstants.TextStyle textStyle = group.getTextStyle();
-
+		
 		textSize = (int) group.getTextSize().value;
-		textColor = Color.color(group.getTextColor(0).getRed(), group.getTextColor(0).getGreen(), group.getTextColor(0).getBlue());
+		textColor = Color.rgb(group.getTextColor(0).getRed(), group.getTextColor(0).getGreen(), group.getTextColor(0).getBlue());
 		textFont = Font.font(fontName, textSize);
 	}
 	
 	/**
-	 * Get awt color and convert to javafx Color
+	 * Get awt color in group and convert to javafx Color
 	 * @param group
 	 * @param id
 	 * @return javafx.scene.paint.Color
